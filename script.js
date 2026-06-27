@@ -9,11 +9,10 @@ seccion.style.display="none";
 
 document.getElementById(id).style.display="block";
 }
+function calificarExamen(){
 
-function correcto(){
-alert("✅ Respuesta Correcta");
-}
+let resultado = document.getElementById("resultado");
 
-function incorrecto(){
-alert("❌ Respuesta Incorrecta");
+resultado.innerHTML = "<h3>✅ Examen enviado correctamente.</h3>";
+
 }
