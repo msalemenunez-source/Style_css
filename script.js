@@ -1,18 +1,29 @@
 function mostrar(id){
-
-let secciones =
-document.querySelectorAll(".contenido");
-
-secciones.forEach(seccion=>{
-seccion.style.display="none";
-});
-
-document.getElementById(id).style.display="block";
+    let secciones = document.querySelectorAll(".contenido");
+    secciones.forEach(seccion=>{
+        seccion.style.display="none";
+    });
+    document.getElementById(id).style.display="block";
 }
+
 function calificarExamen(){
+    const total = 12;
+    let buenas = 0;
 
-let resultado = document.getElementById("resultado");
+    for(let i = 1; i <= total; i++){
+        let opcion = document.querySelector(`input[name="p${i}"]:checked`);
+        if(opcion && opcion.value === "1"){
+            buenas++;
+        }
+    }
 
-resultado.innerHTML = "<h3>✅ Examen enviado correctamente.</h3>";
+    const malas = total - buenas;
+    const nota = Math.round((buenas / total) * 100);
 
+    document.getElementById("resultado").innerHTML = `
+    ✅ Respuestas correctas: ${buenas}<br>
+    ❌ Respuestas incorrectas: ${malas}<br>
+    📈 Nota final: ${nota} / 100
+    `;
 }
+
