@@ -71,9 +71,11 @@ ul,ol{
 display:inline-block;
 text-align:left;
 }
+
 #concepto p{
   text-align: justify;
   line-height: 1.8;
   margin: 20px;
 }
+
   
